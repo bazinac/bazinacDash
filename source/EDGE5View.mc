@@ -263,7 +263,7 @@ class EDGE5View extends Ui.DataField {
 */
 
 		if (info.maxSpeed != null )
-			{maxspeed = info.maxSpeed;}
+			{maxspeed = info.maxSpeed * 3.6;}
        
                                            
 
@@ -371,9 +371,9 @@ else
 		dc.drawText(width-5, height-66, 3, climb.format( "%01d" ) + "%", Gfx.TEXT_JUSTIFY_RIGHT); //sklon
 		dc.drawText(5, height-30, 3, maxspeed.format( "%.01f" ) , Gfx.TEXT_JUSTIFY_LEFT);  //maxspeed
 		dc.drawText(width-5, height-30, 3, vystup.format( "%01d" ) , Gfx.TEXT_JUSTIFY_RIGHT);  //nastoupáno
-  		dc.drawText(width/2, height-30, 3, vzdalenost.format( "%.02f" ), Gfx.TEXT_JUSTIFY_CENTER);	//vzdálenost				
-		dc.drawText(5, 0, 2, batteryPercentage , Gfx.TEXT_JUSTIFY_LEFT); //baterie
-		dc.drawText(width - 5, 0, 2, cas, Gfx.TEXT_JUSTIFY_RIGHT); //hodiny					
+  		dc.drawText(width/2, height-30, 4, vzdalenost.format( "%.02f" ), Gfx.TEXT_JUSTIFY_CENTER);	//vzdálenost				
+		dc.drawText(5, 0, 3, batteryPercentage , Gfx.TEXT_JUSTIFY_LEFT); //baterie
+		dc.drawText(width - 5, 0, 3, cas, Gfx.TEXT_JUSTIFY_RIGHT); //hodiny					
 
 //popisky       
 		dc.setColor(barva3, Gfx.COLOR_TRANSPARENT);
@@ -381,11 +381,11 @@ else
 		dc.drawText(width/2, height-46, 0, "avs (km/h)" , Gfx.TEXT_JUSTIFY_CENTER); //avs 
 		dc.drawText(2, height-46, 0, "altitude (m)" , Gfx.TEXT_JUSTIFY_LEFT); //nadmoøská výška
 		dc.drawText(width-4, height-46, 0, "gradient" , Gfx.TEXT_JUSTIFY_RIGHT); //sklon
-		dc.drawText(width/2, height-12, 0, "distance (km)" , Gfx.TEXT_JUSTIFY_CENTER); //vzdálenost
+		//dc.drawText(width/2, height-12, 0, "distance (km)" , Gfx.TEXT_JUSTIFY_CENTER); //vzdálenost
 		dc.drawText(2, height-12, 0, "max speed" , Gfx.TEXT_JUSTIFY_LEFT); //maxspeed
 		dc.drawText(width-2, height-12, 0, "ascent (m)" , Gfx.TEXT_JUSTIFY_RIGHT); //nastoupáno
-		dc.drawText(5, 15, 0, "battery" , Gfx.TEXT_JUSTIFY_LEFT); //baterie
-		dc.drawText(width - 5, 15, 0, "time", Gfx.TEXT_JUSTIFY_RIGHT); //hodiny
+		//dc.drawText(5, 15, 0, "battery" , Gfx.TEXT_JUSTIFY_LEFT); //baterie
+		//dc.drawText(width - 5, 15, 0, "time", Gfx.TEXT_JUSTIFY_RIGHT); //hodiny
 	
 
 //pole1
@@ -407,12 +407,11 @@ else
         	dc.drawText(width/4, 165, 0, "avg / max", Gfx.TEXT_JUSTIFY_CENTER);									
 
 //pole6
-/*        	dc.setColor(barva2, cira);        
-        	dc.drawText((3*(width/4)), 150, 2, avgwatty.format( "%01d")+"/", Gfx.TEXT_JUSTIFY_RIGHT);
-        	dc.drawText((3*(width/4))+1, 150, 2, maxwatty.format( "%01d" ), Gfx.TEXT_JUSTIFY_LEFT); //pridane max za avg
-        	dc.setColor(barva3, cira); 
-        	dc.drawText(3*(width/4), 165, 0, "avg / max", Gfx.TEXT_JUSTIFY_CENTER);	       	 									
-*/										
+        	dc.setColor(barva2, cira);        
+        	dc.drawText((3*(width/4)), 150, 2, avgkadence.format( "%01d"), Gfx.TEXT_JUSTIFY_RIGHT);
+            dc.setColor(barva3, cira); 
+        	dc.drawText(3*(width/4), 165, 0, "avg", Gfx.TEXT_JUSTIFY_CENTER);	       	 									
+									
 }
 
 }
